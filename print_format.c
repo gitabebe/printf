@@ -50,7 +50,7 @@ int print_string(va_list args)
  *
  * Return: number of characters printed
  */
-int print_percent(va_list args)
+int print_percent(va_list __attribute__((__unused__)) args)
 {
 	_putchar('%');
 
