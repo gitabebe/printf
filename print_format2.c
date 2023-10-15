@@ -84,11 +84,11 @@ int print_rot13(va_list args)
 	str = va_arg(args, char *);
 	while (str[i])
 	{
-		if ((str[i] >= 'A' && str[i] <= 'N') ||
-				(str[i] >= 'a' && str[i] <= 'n'))
+		if ((str[i] >= 'A' && str[i] < 'N') ||
+				(str[i] >= 'a' && str[i] < 'n'))
 			buffer[i % 1024] = (str[i]) + 13;
 		else if ((str[i] >= 'N' && str[i] <= 'Z') ||
-				(str[i] > 'n' && str[i] <= 'z'))
+				(str[i] >= 'n' && str[i] <= 'z'))
 			buffer[i % 1024] = (str[i]) - 13;
 		else
 			buffer[i % 1024] = (str[i]);
